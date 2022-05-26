@@ -23,6 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+let LOCAL_STORAGE_MEMORY = {};
+
+Cypress.Commands.add("clearLocalStorageCache", function(){
+    localStorage.clear();
+    LOCAL_STORAGE_MEMORY = {};
+})
+
 Cypress.Commands.add('baseUrl',()=>{
     cy.visit("https://renweb-staging-v3.renmoney.com");
 })
