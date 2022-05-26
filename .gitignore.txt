@@ -1,2 +1,11 @@
-#ignore node_modules
-node_modules
+
+
+continue your application
+/p/loan/loan-amount
+
+next repayment
+/p/loan-management/loan-detail
+
+
+
+

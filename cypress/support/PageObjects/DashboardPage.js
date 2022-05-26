@@ -29,7 +29,7 @@ class DashboardPage{
 
     NavigateToFixedDepositBalance(){
 
-        return cy.contains("Fixed deposit balance");
+        return cy.get('.card-box__left > :nth-child(1) > h6');
     }
 
     
@@ -40,7 +40,7 @@ class DashboardPage{
 
     NavigateToContinueYourApplication(){
 
-        return cy.contains("Continue");
+        return cy.get('.processing__btn');
     }
 
     
@@ -51,7 +51,7 @@ class DashboardPage{
 
     NavigateToNextRepayment(){
 
-        return cy.contains("Pay");
+        return cy.get('.loan-card__box__actions__pay');
     }
 
 

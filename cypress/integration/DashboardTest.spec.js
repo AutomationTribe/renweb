@@ -7,7 +7,7 @@ describe("Dashboard Test cases",()=>{
     const dashboard = new DashboardPage();
 
     before("login to dashboard",()=>{
-    localStorage.clear();
+
     cy.fixture("generic").then(function(fdata){
         data = fdata
     })

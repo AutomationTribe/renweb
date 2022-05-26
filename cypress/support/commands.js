@@ -35,11 +35,33 @@ Cypress.Commands.add('baseUrl',()=>{
     cy.visit("https://renweb-staging-v3.renmoney.com");
 })
 
+
+
 Cypress.Commands.add("login",()=>{
+     
     cy.visit("https://renweb-staging-v3.renmoney.com");
+    cy.url().then((url) =>{
+       if(url === "https://renweb-staging-v3.renmoney.com/p/dashboard")
+       {
+        cy.get('.sidebar-footer > .logout-box').click(); 
+       }
+    })
     cy.contains("Login").click();
     cy.get("#email").type("Kurdzsamuel@gmail.com");
     cy.contains("Get Started").click();
     cy.wait(7000);
     cy.get("#password").type("Eunice$10").type("{enter}");
+})
+
+Cypress.Commands.add("LoggedInStatus",()=>{
+
+    cy.login();
+
+    if(cy.url() === "https://renweb-staging-v3.renmoney.com/p/dashboard"){
+
+        cy.get(".sidebar-footer.logout-box>span").click();
+        cy.login();
+    }else{
+        cy.login()
+    }
 })
